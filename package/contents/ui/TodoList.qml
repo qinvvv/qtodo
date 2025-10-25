@@ -52,6 +52,9 @@ ListView {
                 itemWrapper.dragItemIndex = index;
                 thisModel.move(drag.source.dragItemIndex, itemWrapper.dragItemIndex, 1);
                 saveModelToJson("todoListModel", todoListModel);
+                let auxY = drag.source.originalY;
+                drag.source.originalY = itemWrapper.y;
+                itemWrapper.originalY = auxY;
                 itemDropped = true;
             }
         }
