@@ -23,6 +23,12 @@ ListView {
         property int dragItemIndex: index
         property double originalY: itemWrapper.y
 
+        onYChanged: {
+            if (!itemMouseArea.drag.active) {
+                originalY = y;
+            }
+        }
+
         Drag.active: itemMouseArea.drag.active
         Drag.hotSpot: Qt.point(itemWrapper.width / 2, itemWrapper.height / 2)
         MouseArea {
@@ -51,9 +57,6 @@ ListView {
                 itemWrapper.dragItemIndex = index;
                 thisModel.move(drag.source.dragItemIndex, itemWrapper.dragItemIndex, 1);
                 saveModelToJson("todoListModel", todoListModel);
-                let auxY = drag.source.originalY;
-                drag.source.originalY = itemWrapper.y;
-                itemWrapper.originalY = auxY;
                 itemDropped = true;
             }
         }
