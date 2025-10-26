@@ -28,6 +28,7 @@ PlasmoidItem {
             width: parent.width
             height: parent.height
             anchors.top: mainInputItem.bottom
+            anchors.bottom: parent.bottom
             model: currentModel
             thisModel: currentModel
         }

@@ -7,7 +7,6 @@ ListView {
     anchors.topMargin: 10
     spacing: 10
     clip: true
-    anchors.top: inputItem.bottom
 
     property var thisModel
     property var parentModelList: []
