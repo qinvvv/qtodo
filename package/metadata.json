@@ -13,7 +13,7 @@
     "EnabledByDefault": true,
     "License": "GPL-3.0+",
     "ServiceTypes": ["Plasma/Applet"],
-    "Version": "1",
+    "Version": "1.0.1",
     "Website": "https://github.com/qinvvv/qtodo"
   },
   "X-Plasma-API-Minimum-Version": "6.0",
